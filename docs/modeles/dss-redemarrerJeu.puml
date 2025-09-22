@@ -1,5 +1,9 @@
-@startuml
-actor ":Joueur" as joueur
-participant "Système" as systeme
+@startuml dss-redemarrerJeu
+title DSS pour redemarrerJeu
 
-joueur -> systeme: redemarrerJeu()
+actor Joueur as J
+boundary "Système" as S
+
+J -> S : redémarrerJeu()
+
+@enduml

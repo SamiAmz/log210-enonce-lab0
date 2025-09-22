@@ -1,9 +1,9 @@
 # Identification de l'étudiant
 
-- <nomComplet1>Entrer votre nom</nomComplet1>
-- <courriel1>Entrer votre courriel</courriel1>
-- <codeMoodle1>Entrer votre code moodle obtenu à partir de Signets, 2 lettres majuscule avec 5 chiffres</codeMoodle1>
-- <githubAccount1>Entrer l'identifiant de votre compte github</githubAccount1>
+- <nomComplet1>Sami Amzert</nomComplet1>
+- <courriel1>sami.amzert.1@ens.etsmtl.ca</courriel1>
+- <codeMoodle1>AU61970</codeMoodle1>
+- <githubAccount1>SamiAmz</githubAccount1>
 
 # Squelette pour un API simple dans Node, Express et TypeScript
 
@@ -209,5 +209,9 @@ Voici la même figure, mais sous forme de diagramme de séquence avec l'acteur. 
 - L'instance j de Joueur a été supprimée sur une base de correspondance avec nom
 
 ![Diagramme de séquence, terminerJeu](http://www.plantuml.com/plantuml/proxy?cache=no&fmt=svg&src=https://raw.githubusercontent.com/profcfuhrmanets/log210-jeu-de-des-node-express-ts/master/docs/modeles/rdcu-terminerJeu.puml)
+
+
+![Diagramme de classe app](http://www.plantuml.com/plantuml/proxy?cache=no&fmt=svg&src=https://raw.githubusercontent.com/SamiAmz/log210-enonce-lab0/master/docs/modeles/app.puml)
+
 
 [README.md](../README.md)

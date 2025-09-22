@@ -55,21 +55,30 @@ class App {
         {
           title: `${titreBase}`,
           user: user,
-          joueurs: JSON.parse(jeuRoutes.controleurJeu.joueurs)
         });
     });
 
     // Route pour classement (stats)
-    router.get('/stats', (req, res, next) => {
-      res.render('stats',
-        // passer objet au gabarit (template) Pug
-        {
-          title: `${titreBase}`,
-          user: user,
-          // créer nouveau tableau de joueurs qui est trié par ratio
-          joueurs: JSON.parse(jeuRoutes.controleurJeu.joueurs)
-        });
+  // Route pour classement (stats)
+router.get('/stats', (req, res, next) => {
+  // récupérer les joueurs depuis le contrôleur
+  const joueurs: Array<any> = jeuRoutes.controleurJeu.joueurs;
+
+  // ajouter une propriété ratio et trier par ordre décroissant
+  const joueursAvecRatio = joueurs
+    .map(joueur => {
+      const ratio = joueur.lancers > 0 ? joueur.lancersGagnes / joueur.lancers : 0;
+      return { ...joueur, ratio };
+    })
+    .sort((a, b) => b.ratio - a.ratio);
+
+  res.render('stats',
+    {
+      title: `${titreBase}`,
+      user: user,
+      joueurs: joueursAvecRatio
     });
+});
 
     // Route to login
     router.get('/signin', async function (req, res) {
