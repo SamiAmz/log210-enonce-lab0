@@ -1,1 +1,5 @@
-// Vous devez compléter ce fichier
+@startuml
+actor ":Joueur" as joueur
+participant "Système" as systeme
+
+joueur -> systeme: redemarrerJeu()
