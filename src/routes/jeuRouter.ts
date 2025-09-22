@@ -23,7 +23,8 @@ export class JeuRouter {
   public getJoueurs(req: Request, res: Response, next: NextFunction) {
     try {
       const joueurs = this._controleurJeu.joueurs; // déjà un tableau
-      res.status(200).json(joueurs);
+      const parsedJoueurs = JSON.parse(joueurs);
+      res.status(200).json(parsedJoueurs);
     } catch (error) {
       this._errorCode500(error, req, res);
     }
@@ -63,8 +64,8 @@ export class JeuRouter {
     try {
       const resultat = this._controleurJeu.jouer(nom);
       const resultatObj = JSON.parse(resultat);
-      const key = resultatObj.somme == 7 ? 'win' : 'info';
-      req.flash(key, `Résultat pour ${nom}: ${resultatObj.v1} + ${resultatObj.v2} = ${resultatObj.somme}`);
+      const key = resultatObj.somme <= 10 ? 'win' : 'info';
+      req.flash(key, `Résultat pour ${nom}: ${resultatObj.v1} + ${resultatObj.v2} + ${resultatObj.v3} = ${resultatObj.somme}`);
       res.status(200).send({
         message: 'Success',
         status: res.status,
