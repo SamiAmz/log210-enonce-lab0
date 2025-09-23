@@ -1,1 +1,9 @@
-// Vous devez compléter ce fichier
+@startuml dss-redemarrerJeu
+title DSS pour redemarrerJeu
+
+actor Joueur as J
+boundary "Système" as S
+
+J -> S : redémarrerJeu()
+
+@enduml
